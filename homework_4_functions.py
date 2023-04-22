@@ -72,11 +72,14 @@ def main():
         elif user_input == "get":
             get = input("Enter name player ")
             player = players_get_by_name(team, get)
-            print(
-                f"player №{player['number']}\
-: name - {player['name'].capitalize()},\
-age - {player['age']} years"
-            )
+            if player is None:
+                print("not found")
+            else:
+                print(
+                    f"player №{player['number']}\
+    : name - {player['name'].capitalize()},\
+    age - {player['age']} years"
+                )
 
         elif user_input == "find":
             field, value = input(
