@@ -63,5 +63,3 @@ def process_schedule(posts: list[Post], channels: list[SocialChannel]) -> None:
         for channel in channels:
             if timestamp <= time():
                 post_a_message(channel, message)
-
-
