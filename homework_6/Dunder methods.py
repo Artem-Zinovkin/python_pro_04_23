@@ -37,13 +37,13 @@ class Price:
         amount_2 = self.conversion(
             amount_of_money=self.amount,
             currency_from=self.currency,
-            currency_to="USD"
-            )
+            currency_to="USD",
+        )
         after_conversion = self.conversion(
             amount_of_money=amount_1 + amount_2,
             currency_from="USD",
             currency_to=self.currency,
-            )
+        )
         return (after_conversion, self.currency)
 
     def __sub__(self, other):
@@ -55,10 +55,10 @@ class Price:
 
         if other.currency == "USD" or self.currency == "USD":
             amount = self.conversion(
-                                    other.amount,
-                                    other.currency,
-                                    self.currency
-                                    )
+                other.amount,
+                other.currency,
+                self.currency,
+            )
             after_conversion = self.amount - amount
             if after_conversion >= 0:
                 return after_conversion, self.currency
@@ -67,7 +67,7 @@ class Price:
         amount_1 = self.conversion(
             amount_of_money=self.amount,
             currency_from=self.currency,
-            currency_to="USD"
+            currency_to="USD",
         )
         amount_2 = self.conversion(
             amount_of_money=other.amount,
