@@ -11,6 +11,7 @@ flake8 = "*"
 isort = "*"
 pympler = "*"
 autopep8 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.9"
